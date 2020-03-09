@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".NouveauMatch">
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:text="Joueur 1"
+        android:gravity="center">
+    </TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:id="@+id/joueur1">
+
+    </EditText>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:text="Joueur 2"
+            android:gravity="center">
+        </TextView>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/joueur2">
+
+        </EditText>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            android:text="Arme utilisée"
+            android:gravity="center">
+        </TextView>
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/radio2"
+        android:orientation="vertical"
+        android:layout_weight="2">
+        <RadioButton
+            android:id="@+id/fleuret"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fleuret" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/épée"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Epée" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/sabre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sabre" >
+        </RadioButton>
+
+
+    </RadioGroup>
+    </LinearLayout>
+
+
+</LinearLayout>
