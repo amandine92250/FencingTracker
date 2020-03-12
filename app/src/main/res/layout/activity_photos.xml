@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".Photos"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Prendre une photo"
+        android:id="@+id/btnPhoto"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        >
+    </Button>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="9"
+        android:id="@+id/imgAffichePhoto">
+    </ImageView>
+
+
+</LinearLayout>

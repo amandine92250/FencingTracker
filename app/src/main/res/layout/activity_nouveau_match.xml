@@ -103,7 +103,81 @@
 
 
     </RadioGroup>
+
+<!--
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"
+            android:id="@+id/testButton">
+
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test2"
+            android:id="@+id/testButtonaffiche">
+
+        </Button>
+        -->
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Location :"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtLocation">
+        </TextView>
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dip" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dip" >
+        </TextView>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Afficher Location"
+            android:id="@+id/ButtonLocation"
+            android:layout_gravity="center">
+        </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Photo"
+            android:id="@+id/ButtonPhoto"
+            android:layout_gravity="center">
+        </Button>
     </LinearLayout>
 
 
 </LinearLayout>
+
+
+
+
+
