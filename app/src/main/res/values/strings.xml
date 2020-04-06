@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">FencingTracker</string>
     <string name="description_logo">Logo application</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -52,14 +52,24 @@ public class NouveauMatch extends AppCompatActivity {
 
          */
 
-        //Quand on click sur le boutton geolocaliser
 
+        // Quand on clique sur le bouton photo
         Button myButtonPhoto = (Button) findViewById(R.id.ButtonPhoto);
         myButtonPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mynewIntentPhotos = new Intent(NouveauMatch.this, Photos.class);
                 startActivity(mynewIntentPhotos);
+            }
+        });
+
+        // Quand on clique sur le bouton Localisation
+        Button myButtonLocation =(Button) findViewById(R.id.ButtonLocation);
+        myButtonLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mynewIntentLocation = new Intent(NouveauMatch.this, MapsActivity.class);
+                startActivity(mynewIntentLocation);
             }
         });
 
