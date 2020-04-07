@@ -14,14 +14,21 @@ import java.util.List;
 public class DatabaseManger extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME ="Match.db";
-    private static final int DATABASE_VERSION =6;
+    private static final int DATABASE_VERSION =7;
     SQLiteDatabase db;
 
     //Table match
     private static final String TABLE_NAME ="T_match";
     private static final String COL_1 ="NAME1";
-    private static final String COL_2 ="NAME2";
-    private static final String COL_3 ="ARME";
+    private static final String COL_2 ="ATTAQUES1";
+    private static final String COL_3 ="CATTAQUES1";
+    private static final String COL_4 ="POINTS1";
+    private static final String COL_5 ="NAME2";
+    private static final String COL_6 ="ATTAQUES2";
+    private static final String COL_7 ="CATTAQUES2";
+    private static final String COL_8 ="POINTS2";
+    private static final String COL_9 ="ARME";
+
 
 
 
@@ -43,7 +50,13 @@ public class DatabaseManger extends SQLiteOpenHelper {
         String strSQLMatch = "create table T_match ("
                 + " col_id integer primary key autoincrement,"
                 + " name1 text,"
+                + " attaques1 text,"
+                + " cattaques1 text,"
+                + " points1 text,"
                 + " name2 text,"
+                + " attaques2 text,"
+                + " cattaques2 text,"
+                + " points2 text,"
                 + " arme text"
                 + ")";
 
@@ -84,14 +97,19 @@ public class DatabaseManger extends SQLiteOpenHelper {
     }
 
 
-    public boolean insertScore(String name1, String name2, String arme)
+    public boolean insertScore(String name1, String name2, String attaques1, String cattaques1, String points1, String attaques2, String cattaques2, String points2,String arme)
     {
-
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(COL_1, name1);
-        contentValues.put(COL_2, name2);
-        contentValues.put(COL_3, arme);
+        contentValues.put(COL_2, attaques1);
+        contentValues.put(COL_3, cattaques1);
+        contentValues.put(COL_4, points1);
+        contentValues.put(COL_5, name2);
+        contentValues.put(COL_6, attaques2);
+        contentValues.put(COL_7, cattaques2);
+        contentValues.put(COL_8, points2);
+        contentValues.put(COL_9, arme);
 
         long result=db.insert(TABLE_NAME,null,contentValues);
         if(result==-1)

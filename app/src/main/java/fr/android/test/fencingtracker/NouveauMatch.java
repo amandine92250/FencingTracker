@@ -33,10 +33,9 @@ public class NouveauMatch extends AppCompatActivity {
 
     Spinner joueur1,joueur2,arme;
 
-
-
-    RadioGroup myRadioGroup;
-    RadioButton radioButton;
+    EditText attaques1,attaques2;
+    EditText cattaques1,cattaques2;
+    EditText points1,points2;
 
 
     private TextView latitude;
@@ -53,6 +52,15 @@ public class NouveauMatch extends AppCompatActivity {
         joueur1=(Spinner) findViewById(R.id.spinner1);
         joueur2=(Spinner) findViewById(R.id.spinner2);
         arme=(Spinner) findViewById(R.id.spinner3);
+
+        attaques1=(EditText) findViewById(R.id.attaquesj1);
+        attaques2=(EditText) findViewById(R.id.attaquesj2);
+
+        cattaques1=(EditText) findViewById(R.id.cattaquesj1);
+        cattaques2=(EditText) findViewById(R.id.cattaquesj2);
+
+        points1=(EditText) findViewById(R.id.pointsj1);
+        points2=(EditText) findViewById(R.id.pointsj2);
 
         databaseManger = new DatabaseManger (this);
 
@@ -116,11 +124,12 @@ public class NouveauMatch extends AppCompatActivity {
 
         databaseManger.close();
 
+
     }
 
     public void AjoutBDD()
     {
-        boolean isInsert=databaseManger.insertScore(joueur1.getSelectedItem().toString(),joueur2.getSelectedItem().toString(),arme.getSelectedItem().toString());
+        boolean isInsert=databaseManger.insertScore(joueur1.getSelectedItem().toString(),joueur2.getSelectedItem().toString(),attaques1.getText().toString(),cattaques1.getText().toString(), points1.getText().toString(),attaques2.getText().toString(), cattaques2.getText().toString(), points2.getText().toString(),arme.getSelectedItem().toString());
 
         if(isInsert==true)
         {
