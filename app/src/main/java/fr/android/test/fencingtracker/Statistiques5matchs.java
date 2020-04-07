@@ -14,8 +14,8 @@ import android.widget.ArrayAdapter;
 
 public class Statistiques5matchs extends AppCompatActivity {
     private DatabaseManger databaseManger;
-    private TextView matchView;
-    private TextView match;
+    private TextView matchView,matchView2;
+    private TextView match, match2;
     Cursor c1;
 
     @Override
@@ -28,8 +28,6 @@ public class Statistiques5matchs extends AppCompatActivity {
         databaseManger = new DatabaseManger(this);
         matchView = (TextView) findViewById(R.id.matchView);
         match = (TextView) findViewById(R.id.match);
-
-
 
 
         //OK
@@ -48,7 +46,7 @@ public class Statistiques5matchs extends AppCompatActivity {
 
         Cursor data2=databaseManger.get5matches();
         if (data2.moveToLast()) {
-            match.setText("***MATCH***");
+            match.append("****MATCH****"+ "\n");
             matchView.append("Joueur 1 : " + data2.getString(1) + "\n");
             matchView.append("Attaques joueur 1 : " + data2.getString(2) + "\n");
             matchView.append("Contre attaques joueur 1 : " + data2.getString(3) + "\n");
@@ -74,6 +72,8 @@ public class Statistiques5matchs extends AppCompatActivity {
                 matchView.append("Contre attaques joueur 2 : " + data2.getString(7) + "\n");
                 matchView.append("Points joueur 2 : " + data2.getString(8) + "\n" + "\n");
                 matchView.append("Arme : " + data2.getString(9) + "\n" + "\n");
+
+
             };
             i++;
 

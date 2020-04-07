@@ -7,35 +7,53 @@
     android:orientation="vertical"
     tools:context=".Statistiques5matchs">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp">
-        <TextView
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp">
+
+                <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
             android:textSize="17sp"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:id="@+id/match"
             android:textStyle="bold"
             android:paddingBottom="5dp" />
+                </TableRow>
+
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="3dp"
             android:background="@drawable/tableborder">
 
+
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:layout_height="match_parent"
                     android:id="@+id/matchView"/>
 
         </TableRow>
 
-        </TableLayout>
 
+
+                </TableLayout>
+
+
+
+        </ScrollView>
 
 </LinearLayout>
