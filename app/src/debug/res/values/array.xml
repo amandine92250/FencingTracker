@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string-array name="defaultValue">
+        <item>Fleuret</item>
+        <item>Epée</item>
+        <item>Sabre</item>
+    </string-array>
+</resources>

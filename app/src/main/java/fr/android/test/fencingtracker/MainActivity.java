@@ -30,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button myButtonNvJoueur=(Button) findViewById(R.id.ButtonNvJoueur);
+        myButtonNvJoueur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent explicite
+                Intent myIntentNvJoueur=new Intent(MainActivity.this, NouveauJoueur.class);
+                startActivity(myIntentNvJoueur);
+            }
+        });
+
 
         //On ouvre une page pour afficher les statistiques de 5 précédents matchs
         Button viewData=(Button) findViewById(R.id.testButtonaffiche);

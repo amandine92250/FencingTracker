@@ -13,18 +13,31 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NouveauMatch extends AppCompatActivity {
-    ListView sampleList;
-    private TextView matchView;
+    //ListView sampleList;
+    //private TextView matchView;
     private DatabaseManger databaseManger;
-    EditText nom1,nom2;
-   // Button addData , viewData;
+
+    Spinner joueur1,joueur2,arme;
+
+
+
+    RadioGroup myRadioGroup;
+    RadioButton radioButton;
+
 
     private TextView latitude;
     private TextView longitude;
@@ -37,8 +50,9 @@ public class NouveauMatch extends AppCompatActivity {
         setTitle("Nouveau match");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        nom1=(EditText) findViewById(R.id.joueur1);
-        nom2=(EditText) findViewById(R.id.joueur2);
+        joueur1=(Spinner) findViewById(R.id.spinner1);
+        joueur2=(Spinner) findViewById(R.id.spinner2);
+        arme=(Spinner) findViewById(R.id.spinner3);
 
         databaseManger = new DatabaseManger (this);
 
@@ -73,24 +87,48 @@ public class NouveauMatch extends AppCompatActivity {
             }
         });
 
+
+        //DropDown Joueur 1
+        Spinner dropmenu1;
+        dropmenu1 = (Spinner) findViewById(R.id.spinner1);
+        List<String> joueurName = new ArrayList<>();
+        joueurName = databaseManger.getAllNameJoueur();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, joueurName);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropmenu1.setAdapter(dataAdapter);
+
+        //DropDown Joueur 2
+        Spinner dropmenu2;
+        dropmenu2 = (Spinner) findViewById(R.id.spinner2);
+        List<String> joueurName2 = new ArrayList<>();
+        joueurName2 = databaseManger.getAllNameJoueur();
+        ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, joueurName2);
+        dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropmenu2.setAdapter(dataAdapter2);
+
+
+        //DropDown Arme
+        Spinner dropmenu3;
+        dropmenu3 = (Spinner) findViewById(R.id.spinner3);
+
+
         databaseManger.close();
 
     }
 
-
-
-
     public void AjoutBDD()
     {
-        boolean isInsert=databaseManger.insertScore(nom1.getText().toString(),nom2.getText().toString());
+        boolean isInsert=databaseManger.insertScore(joueur1.getSelectedItem().toString(),joueur2.getSelectedItem().toString(),arme.getSelectedItem().toString());
 
         if(isInsert==true)
         {
-            Toast.makeText(NouveauMatch.this,"inserer avec succe",Toast.LENGTH_LONG).show();
+            Toast.makeText(NouveauMatch.this,"Ajouté avec succes",Toast.LENGTH_LONG).show();
         }
         else
         {
-            Toast.makeText(NouveauMatch.this,"PAAS inserer ",Toast.LENGTH_LONG).show();
+            Toast.makeText(NouveauMatch.this,"Probleme insertion ",Toast.LENGTH_LONG).show();
 
         }
 
@@ -153,4 +191,6 @@ public class NouveauMatch extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

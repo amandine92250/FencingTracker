@@ -14,29 +14,51 @@ import java.util.List;
 public class DatabaseManger extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME ="Match.db";
-    private static final int DATABASE_VERSION =3;
-    private static final String TABLE_NAME ="T_match";
+    private static final int DATABASE_VERSION =6;
     SQLiteDatabase db;
+
+    //Table match
+    private static final String TABLE_NAME ="T_match";
     private static final String COL_1 ="NAME1";
     private static final String COL_2 ="NAME2";
+    private static final String COL_3 ="ARME";
 
+
+
+    //Table Joueur
+    public static final String JOUEUR_PRENOM = "prenom";
+    public static final String JOUEUR_NOM = "nom";
+    public static final String JOUEUR_TABLE_NAME = "T_Joueur";
 
     public DatabaseManger(Context context)
     {
         super(context,DATABASE_NAME, null,DATABASE_VERSION);
         db=getWritableDatabase();
-
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String strSQL = "create table T_match ("
+
+        //Match
+        String strSQLMatch = "create table T_match ("
                 + " col_id integer primary key autoincrement,"
                 + " name1 text,"
-                + " name2 text"
+                + " name2 text,"
+                + " arme text"
                 + ")";
 
-        db.execSQL(strSQL);
+        db.execSQL(strSQLMatch);
+
+        //Joueur
+        String strSQLJoueur = "create table T_Joueur ("
+                + " col_id integer primary key autoincrement,"
+                + " prenom text,"
+                + " nom text"
+                + ")";
+
+        db.execSQL(strSQLJoueur);
+
+
         Log.i("DATABASE", "oncreate");
 
     }
@@ -45,23 +67,31 @@ public class DatabaseManger extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        String strSQL =  "drop table T_match";
-        db.execSQL(strSQL);
-this.onCreate(db);
-Log.i("kd","upgrade");
-        //String strSQL =  "alter table T_match and column...";
-        //On supprime la table puis on la recreer
+        //Match
+        String strSQLMatch =  "drop table T_match";
+        db.execSQL(strSQLMatch);
+
+
+        //Joueur
+        String strSQLJoueur =  "drop table T_Joueur";
+        db.execSQL(strSQLJoueur);
+
+        //creer table
+        this.onCreate(db);
+        Log.i("kd","upgrade");
+
 
     }
 
 
-    public boolean insertScore(String name1, String name2)
+    public boolean insertScore(String name1, String name2, String arme)
     {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(COL_1, name1);
         contentValues.put(COL_2, name2);
+        contentValues.put(COL_3, arme);
 
         long result=db.insert(TABLE_NAME,null,contentValues);
         if(result==-1)
@@ -72,19 +102,31 @@ Log.i("kd","upgrade");
         {
             return true;
         }
-        /*
-
-        String strSQL =  "insert into T_match (name1,name2) values('"
-                + name1 +"' ," + name2 +")";
-        this.getWritableDatabase().execSQL(strSQL);
-
-         */
-
 
     }
 
+//inserer un joueur
+    public boolean insertJoueur(String prenom, String nom)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(JOUEUR_PRENOM, prenom);
+        contentValues.put(JOUEUR_NOM, nom);
 
+        //inserer une ligne
+        long result=db.insert(JOUEUR_TABLE_NAME,null,contentValues);
+        if(result==-1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
 
+    }
+
+    //*****Fonctions pour la table Match*****
 
     public Cursor getAllData()
     {
@@ -102,9 +144,7 @@ Log.i("kd","upgrade");
 
     }
 
-
-
-
+    /*
     public List<Match> readTop10() {
         List<Match> matches = new ArrayList<>();
 
@@ -114,7 +154,7 @@ Log.i("kd","upgrade");
         Log.i("TOP1°","TOP10");
 
         // 2nd technique "plus objet"
-        /*Cursor cursor = this.getReadableDatabase().query( "T_match",
+        Cursor cursor = this.getReadableDatabase().query( "T_match",
                 new String[] { "name1", "name2" },
                 null, null, null, null, "name desc", "5");
         cursor.moveToFirst();
@@ -124,9 +164,26 @@ Log.i("kd","upgrade");
             matches.add( match );
             cursor.moveToNext();
         }
-        cursor.close();*/
+        cursor.close();
 
         return matches;
+    }
+*/
+
+
+    //****Fonctions pour la table Joueur*****
+
+    //Retourne le nom de tous les joueurs de la table
+    public List<String> getAllNameJoueur(){
+        List<String> joueurName = new ArrayList<>();
+        Cursor cursor = db.query(DatabaseManger.JOUEUR_TABLE_NAME,
+                new String[] { DatabaseManger.JOUEUR_NOM}, null, null, null, null, null,
+                null);
+
+        while (cursor.moveToNext()) {
+            joueurName.add(cursor.getString(0));
+        }
+        return joueurName;
     }
 
 

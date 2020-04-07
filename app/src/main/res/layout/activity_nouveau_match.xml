@@ -10,26 +10,25 @@
 
 
     <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp">
 
     <TextView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="2"
-        android:text="Joueur 1"
-        android:gravity="center">
+        android:gravity="center_horizontal"
+        android:text="Joueur 1">
     </TextView>
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:id="@+id/joueur1">
-
-    </EditText>
+        </Spinner>
 
 </LinearLayout>
 
@@ -44,21 +43,48 @@
             android:layout_width="match_parent"
             android:layout_weight="2"
             android:text="Joueur 2"
-            android:gravity="center">
+            android:gravity="center_horizontal">
         </TextView>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <Spinner
+
+            android:id="@+id/spinner2"
             android:layout_weight="2"
-            android:id="@+id/joueur2">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        </EditText>
+        </Spinner>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:text="Arme utilisée"
+            android:gravity="center_horizontal">
+        </TextView>
+
+        <Spinner
+
+            android:id="@+id/spinner3"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/defaultValue">
+
+        </Spinner>
 
     </LinearLayout>
 
 
+<!--
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -74,37 +100,37 @@
         </TextView>
 
     <RadioGroup
-        android:id="@+id/group"
+        android:id="@+id/myRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checkedButton="@+id/radio2"
         android:orientation="vertical"
         android:layout_weight="2">
         <RadioButton
-            android:id="@+id/fleuret"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fleuret" >
+            android:text="Fleuret"
+            android:checked="false">
         </RadioButton>
 
         <RadioButton
-            android:id="@+id/épée"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Epée" >
+            android:text="Epée"
+            android:checked="false">
         </RadioButton>
 
         <RadioButton
-            android:id="@+id/sabre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sabre" >
+            android:text="Sabre"
+            android:checked="false">
         </RadioButton>
 
 
     </RadioGroup>
+    </LinearLayout>
 
-<!--
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -121,7 +147,7 @@
 
         </Button>
         -->
-    </LinearLayout>
+
 
 
     <LinearLayout

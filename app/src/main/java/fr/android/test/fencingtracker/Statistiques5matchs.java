@@ -47,7 +47,8 @@ public class Statistiques5matchs extends AppCompatActivity {
         Cursor data2=databaseManger.get5matches();
         if (data2.moveToLast()) {
             matchView.append("Joueur 1 : " + data2.getString(1) + " ");
-            matchView.append("Joueur 2 : " + data2.getString(2) + "\n" + "\n");
+            matchView.append("Joueur 2 : " + data2.getString(2) + " ");
+            matchView.append("Arme : " + data2.getString(3) + "\n" + "\n");
 
         }
         int i=0;
@@ -56,7 +57,8 @@ public class Statistiques5matchs extends AppCompatActivity {
             if(data2.moveToPrevious())
             {
                 matchView.append("Joueur 1 : " + data2.getString(1) + " ");
-                matchView.append("Joueur 2 : " + data2.getString(2) + "\n" + "\n");
+                matchView.append("Joueur 2 : " + data2.getString(2) + " ");
+                matchView.append("Arme : " + data2.getString(3) + "\n" + "\n");
             };
             i++;
 
