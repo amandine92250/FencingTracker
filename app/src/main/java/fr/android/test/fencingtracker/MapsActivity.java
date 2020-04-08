@@ -22,6 +22,8 @@ public class MapsActivity extends AppCompatActivity implements LocationListener 
     private LocationManager locationManager;
     private String provider;
 
+    private DatabaseManger databaseManger;
+
 
     /** Called when the activity is first created. */
 
@@ -31,6 +33,8 @@ public class MapsActivity extends AppCompatActivity implements LocationListener 
         setContentView(R.layout.activity_maps);
         latituteField = (TextView) findViewById(R.id.TextView02);
         longitudeField = (TextView) findViewById(R.id.TextView04);
+
+        databaseManger = new DatabaseManger (this);
 
         // Get the location manager
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -58,6 +62,9 @@ public class MapsActivity extends AppCompatActivity implements LocationListener 
             latituteField.setText("Location not available");
             longitudeField.setText("Location not available");
         }
+        AjoutBDD();
+
+        databaseManger.close();
     }
 
     /* Request updates at startup */
@@ -120,5 +127,22 @@ public class MapsActivity extends AppCompatActivity implements LocationListener 
         Toast.makeText(this, "Disabled provider " + provider,
                 Toast.LENGTH_SHORT).show();
     }
+
+    public void AjoutBDD()
+    {
+        boolean isInsert=databaseManger.insertLocation(latituteField.getText().toString(),longitudeField.getText().toString());
+        if(isInsert==true)
+        {
+            Toast.makeText(MapsActivity.this,"Localisation ajoutée avec succès",Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(MapsActivity.this,"Probleme insertion ",Toast.LENGTH_LONG).show();
+
+        }
+
+    }
+
+
 }
 

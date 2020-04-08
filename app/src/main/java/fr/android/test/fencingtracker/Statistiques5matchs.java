@@ -58,6 +58,8 @@ public class Statistiques5matchs extends AppCompatActivity {
             matchView.append("Contre attaques joueur 2 : " + data2.getString(7) + "\n");
             matchView.append("Points joueur 2 : " + data2.getString(8) + "\n" + "\n");
             matchView.append("Arme : " + data2.getString(9) + "\n" + "\n");
+            matchView.append("Latitude : " + data2.getString(10) + "\n" + "\n");
+            matchView.append("Longitude : " + data2.getString(11) + "\n" + "\n");
 
         }
         int i=0;
@@ -74,6 +76,8 @@ public class Statistiques5matchs extends AppCompatActivity {
                 matchView.append("Contre attaques joueur 2 : " + data2.getString(7) + "\n");
                 matchView.append("Points joueur 2 : " + data2.getString(8) + "\n" + "\n");
                 matchView.append("Arme : " + data2.getString(9) + "\n" + "\n");
+                matchView.append("Latitude : " + data2.getString(10) + "\n" + "\n");
+                matchView.append("Longitude : " + data2.getString(11) + "\n" + "\n");
             };
             i++;
 

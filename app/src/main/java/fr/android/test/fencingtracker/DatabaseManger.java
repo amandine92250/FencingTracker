@@ -14,7 +14,7 @@ import java.util.List;
 public class DatabaseManger extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME ="Match.db";
-    private static final int DATABASE_VERSION =7;
+    private static final int DATABASE_VERSION =8;
     SQLiteDatabase db;
 
     //Table match
@@ -28,6 +28,8 @@ public class DatabaseManger extends SQLiteOpenHelper {
     private static final String COL_7 ="CATTAQUES2";
     private static final String COL_8 ="POINTS2";
     private static final String COL_9 ="ARME";
+    private static final String COL_10 ="LATITUDE";
+    private static final String COL_11 ="LONGITUDE";
 
 
 
@@ -57,7 +59,9 @@ public class DatabaseManger extends SQLiteOpenHelper {
                 + " attaques2 text,"
                 + " cattaques2 text,"
                 + " points2 text,"
-                + " arme text"
+                + " arme text,"
+                + " latitude text,"
+                + " longitude text"
                 + ")";
 
         db.execSQL(strSQLMatch);
@@ -121,6 +125,25 @@ public class DatabaseManger extends SQLiteOpenHelper {
             return true;
         }
 
+    }
+
+    //Insérer localisation
+    public boolean insertLocation(String latitude, String longitude)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(COL_10, latitude);
+        contentValues.put(COL_11, longitude);
+
+        long result=db.insert(TABLE_NAME,null,contentValues);
+        if(result==-1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
 //inserer un joueur
