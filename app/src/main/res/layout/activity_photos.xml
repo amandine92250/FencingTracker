@@ -12,12 +12,25 @@
     android:orientation="vertical"
     android:weightSum="10">
 
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Prendre une photo"
         android:id="@+id/btnPhoto"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        >
+    </Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Enregistrer"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnEnreg"
         android:background="@android:color/holo_blue_light"
         android:textColor="@android:color/white"
         >
