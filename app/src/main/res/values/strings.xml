@@ -1,5 +1,36 @@
 <resources>
     <string name="app_name">FencingTracker</string>
     <string name="description_logo">Logo application</string>
+
+    <string name="btnNouveauMatch">Add a Match</string>
+    <string name="btnNouveauJoueur">Add a player</string>
+    <string name="btnStatistiqueMatch">Statistics 5 matches</string>
+    <string name="btnLocalisation">Localisation</string>
+    <string name="btnPhoto">Pictures</string>
+    <string name="btnPrendrePhoto">Take pictures</string>
+    <string name="btnEnrgPhoto">Save</string>
+    <string name="btnAddPlayer">Add</string>
+
+
+    <string name="nom">Name</string>
+    <string name="prenom">First name</string>
+
+    <string name="player1">Player 1</string>
+    <string name="player2">Player 2</string>
+    <string name="attack">Attacks</string>
+    <string name="contre_attaque">Counterattacks</string>
+    <string name="points">Points</string>
+    <string name="arme_use">Weapon used for this match</string>
+    <string name="fleuret">Foil</string>
+    <string name="epee">Sword</string>
+    <string name="sabre">Saber</string>
+
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_camera">Camera</string>
+    <string name="title_activity_localisation">Localisation</string>
+    <string name="title_activity_nv_match">New Match</string>
+    <string name="title_activity_nv_joueur">New Player</string>
+    <string name="title_activity_stat_5match">Statistics of the last 5 matches</string>
+
+
 </resources>

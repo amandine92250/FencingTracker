@@ -25,7 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NouveauJoueur"></activity>
+        <activity android:name=".NouveauJoueur"
+            android:label="@string/title_activity_nv_joueur"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,11 +42,15 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Localisation" />
-        <activity android:name=".Photos" />
-        <activity android:name=".Statistiques5matchs" />
+        <activity android:name=".Localisation"
+            android:label="@string/title_activity_localisation" />
+        <activity android:name=".Photos"
+            android:label="@string/title_activity_camera"/>
+        <activity android:name=".Statistiques5matchs"
+            android:label="@string/title_activity_stat_5match"/>
         <activity android:name=".DonneeMatch" />
-        <activity android:name=".NouveauMatch" />
+        <activity android:name=".NouveauMatch"
+            android:label="@string/title_activity_nv_match"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

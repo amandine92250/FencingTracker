@@ -22,7 +22,7 @@ public class Statistiques5matchs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistiques5matchs);
-        setTitle("5 derniers matchs");
+        //setTitle("5 derniers matchs");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         databaseManger = new DatabaseManger(this);

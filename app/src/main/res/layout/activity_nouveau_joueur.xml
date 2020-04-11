@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_weight="2"
-            android:text="Prenom"
+            android:text="@string/prenom"
             android:gravity="center">
         </TextView>
 
@@ -42,7 +42,7 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_weight="2"
-            android:text="Nom"
+            android:text="@string/nom"
             android:gravity="center">
         </TextView>
 
@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Ajouter"
+            android:text="@string/btnAddPlayer"
             android:id="@+id/ajoutJoueur"
             android:layout_gravity="center">
         </Button>

@@ -22,7 +22,7 @@ public class NouveauJoueur extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nouveau_joueur);
-        setTitle("Nouveau joueur");
+        //setTitle("Nouveau joueur");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         prenom=(EditText) findViewById(R.id.prenom);

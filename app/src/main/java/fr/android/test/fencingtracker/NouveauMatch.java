@@ -46,7 +46,7 @@ public class NouveauMatch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nouveau_match);
-        setTitle("Nouveau match");
+        //setTitle("Nouveau match");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         joueur1=(Spinner) findViewById(R.id.spinner1);

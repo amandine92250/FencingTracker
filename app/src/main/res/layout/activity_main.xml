@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="Nouveau Match"
+        android:text="@string/btnNouveauMatch"
         android:id="@+id/ButtonNvMatch"
         android:layout_gravity="center">
     </Button>
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="Nouveau joueur"
+        android:text="@string/btnNouveauJoueur"
         android:id="@+id/ButtonNvJoueur"
         android:layout_gravity="center"
         android:layout_marginTop="10dp">
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="Statistique 5 matchs "
+        android:text="@string/btnStatistiqueMatch"
         android:id="@+id/testButtonaffiche"
         android:layout_gravity="center"
         android:layout_marginTop="10dp">
