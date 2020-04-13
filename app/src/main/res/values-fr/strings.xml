@@ -11,6 +11,7 @@
     <string name="btnPrendrePhoto">Prendre photos</string>
     <string name="btnEnrgPhoto">Enregistrer</string>
     <string name="btnAddPlayer">Ajouter</string>
+    <string name="btnMatch">Ajouter Match </string>
 
 
     <string name="nom">Nom</string>

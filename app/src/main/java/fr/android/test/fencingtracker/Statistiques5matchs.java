@@ -30,20 +30,6 @@ public class Statistiques5matchs extends AppCompatActivity {
         match = (TextView) findViewById(R.id.match);
 
 
-        //OK
-
-/*
-        Cursor data=databaseManger.getAllData();
-        while (data.moveToNext()) {
-            matchView.append("Joueur 1 : " + data.getString(1) + " ");
-            matchView.append("Joueur 2 : " + data.getString(2) + "\n" + "\n");
-
-        }
-        */
-
-
-//Fin ok
-
         Cursor data2=databaseManger.get5matches();
         if (data2.moveToLast()) {
             match.append("****MATCH****"+ "\n");
@@ -54,9 +40,9 @@ public class Statistiques5matchs extends AppCompatActivity {
             matchView.append("Joueur 2 : " + data2.getString(5) + " ");
             matchView.append("Attaques joueur 2 : " + data2.getString(6) + "\n");
             matchView.append("Contre attaques joueur 2 : " + data2.getString(7) + "\n");
-            matchView.append("Points joueur 2 : " + data2.getString(8) + "\n" + "\n");
-            matchView.append("Arme : " + data2.getString(9) + "\n" + "\n");
-            matchView.append("Latitude : " + data2.getString(10) + "\n" + "\n");
+            matchView.append("Points joueur 2 : " + data2.getString(8) + "\n" );
+            matchView.append("Arme utilisée: " + data2.getString(9) + "\n" );
+            matchView.append("Latitude : " + data2.getString(10) + "\n" );
             matchView.append("Longitude : " + data2.getString(11) + "\n" + "\n");
 
         }
@@ -72,27 +58,15 @@ public class Statistiques5matchs extends AppCompatActivity {
                 matchView.append("Joueur 2 : " + data2.getString(5) + " ");
                 matchView.append("Attaques joueur 2 : " + data2.getString(6) + "\n");
                 matchView.append("Contre attaques joueur 2 : " + data2.getString(7) + "\n");
-                matchView.append("Points joueur 2 : " + data2.getString(8) + "\n" + "\n");
-                matchView.append("Arme : " + data2.getString(9) + "\n" + "\n");
-                matchView.append("Latitude : " + data2.getString(10) + "\n" + "\n");
+                matchView.append("Points joueur 2 : " + data2.getString(8) + "\n");
+                matchView.append("Arme utilisée: " + data2.getString(9) + "\n" );
+                matchView.append("Latitude : " + data2.getString(10) + "\n" );
                 matchView.append("Longitude : " + data2.getString(11) + "\n" + "\n");
 
             };
             i++;
 
         }
-
-
-
-/*
-        List<Match> matchs = databaseManger.readTop10();
-        for(Match match : matchs)
-        {
-            matchView.append(match.toString()+ "\n\n");
-        }
-
- */
-
 
         databaseManger.close();
     }

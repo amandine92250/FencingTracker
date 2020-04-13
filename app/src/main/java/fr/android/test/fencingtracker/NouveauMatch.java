@@ -23,6 +23,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +32,7 @@ public class NouveauMatch extends AppCompatActivity {
     //ListView sampleList;
     //private TextView matchView;
     private DatabaseManger databaseManger;
+    JSONArray ConversionJsonArray;
 
     Spinner joueur1,joueur2,arme;
 
@@ -40,6 +43,7 @@ public class NouveauMatch extends AppCompatActivity {
 
     private TextView latitude;
     private TextView longitude;
+    private static AccesDistant accesDistant;
 
 
     @Override
@@ -61,6 +65,9 @@ public class NouveauMatch extends AppCompatActivity {
 
         points1=(EditText) findViewById(R.id.pointsj1);
         points2=(EditText) findViewById(R.id.pointsj2);
+
+        accesDistant = new AccesDistant();
+        accesDistant.envoi("dernier", new JSONArray());
 
         databaseManger = new DatabaseManger (this);
 
@@ -95,6 +102,33 @@ public class NouveauMatch extends AppCompatActivity {
             }
         });
 
+        // Quand on clique sur le bouton Ajout match
+        Button myButtonAjout =(Button) findViewById(R.id.AjoutMatch);
+        myButtonAjout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AjoutBDD();
+                List laListe = new ArrayList();
+                laListe.add(joueur1.getSelectedItem().toString());
+                laListe.add(attaques1.getText().toString());
+                laListe.add(cattaques1.getText().toString());
+                laListe.add(points1.getText().toString());
+                laListe.add(joueur2.getSelectedItem().toString());
+                laListe.add(attaques2.getText().toString());
+                laListe.add(cattaques2.getText().toString());
+                laListe.add(points2.getText().toString());
+                laListe.add(arme.getSelectedItem().toString());
+
+                ConversionJsonArray= new JSONArray(laListe);
+
+                accesDistant.envoi("enreg",ConversionJsonArray);
+                Intent myIntentDonneeMatch=new Intent(NouveauMatch.this, MainActivity.class);
+                startActivity(myIntentDonneeMatch);
+
+            }
+        });
+
 
         //DropDown Joueur 1
         Spinner dropmenu1;
@@ -121,9 +155,7 @@ public class NouveauMatch extends AppCompatActivity {
         Spinner dropmenu3;
         dropmenu3 = (Spinner) findViewById(R.id.spinner3);
 
-
         databaseManger.close();
-
 
     }
 
@@ -137,11 +169,16 @@ public class NouveauMatch extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(NouveauMatch.this,"Probleme insertion ",Toast.LENGTH_LONG).show();
+            Toast.makeText(NouveauMatch.this,"Problème insertion ",Toast.LENGTH_LONG).show();
 
         }
 
     }
+
+
+
+
+
 
 /*
     private void ViewAll()
@@ -177,21 +214,17 @@ public class NouveauMatch extends AppCompatActivity {
 
  */
 
-     public boolean onCreateOptionsMenu(Menu menu) {
+    /* public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
          TextView test=new TextView(this);
 
          return true;
-    }
+    }*/
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId())
         {
-            case R.id.action_demarrer:
-                AjoutBDD();
-                Intent myIntentDonneeMatch=new Intent(NouveauMatch.this, DonneeMatch.class);
-                startActivity(myIntentDonneeMatch);
-                return true;
+
 
             case android.R.id.home:
                 this.finish();

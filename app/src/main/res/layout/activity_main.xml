@@ -25,7 +25,8 @@
         android:textSize="20dp"
         android:text="@string/btnNouveauMatch"
         android:id="@+id/ButtonNvMatch"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:background="@drawable/button">
     </Button>
 
     <Button
@@ -35,7 +36,8 @@
         android:text="@string/btnNouveauJoueur"
         android:id="@+id/ButtonNvJoueur"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button">
 
     </Button>
 
@@ -46,7 +48,8 @@
         android:text="@string/btnStatistiqueMatch"
         android:id="@+id/testButtonaffiche"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button">
 
     </Button>
 

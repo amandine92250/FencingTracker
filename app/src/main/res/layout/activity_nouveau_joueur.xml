@@ -60,15 +60,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_gravity="right"
         >
 
         <Button
+            android:id="@+id/ajoutJoueur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button"
+            android:gravity="center"
             android:text="@string/btnAddPlayer"
-            android:id="@+id/ajoutJoueur"
-            android:layout_gravity="center">
+            android:textSize="20dp">
+
         </Button>
     </LinearLayout>
 

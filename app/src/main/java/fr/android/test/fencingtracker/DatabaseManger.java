@@ -14,7 +14,7 @@ import java.util.List;
 public class DatabaseManger extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME ="Match.db";
-    private static final int DATABASE_VERSION =8;
+    private static final int DATABASE_VERSION =18;
     SQLiteDatabase db;
 
     //Table match

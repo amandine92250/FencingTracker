@@ -10,6 +10,7 @@
     <string name="btnPrendrePhoto">Take pictures</string>
     <string name="btnEnrgPhoto">Save</string>
     <string name="btnAddPlayer">Add</string>
+    <string name="btnMatch">Add Match </string>
 
 
     <string name="nom">Name</string>
